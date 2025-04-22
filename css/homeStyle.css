@@ -1,0 +1,221 @@
+/* Additional imports for main styles */
+@import url('styles.css');
+
+/* Reset and base */
+
+/* Home page specific main section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+  
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+.social-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 50px;
+}
+
+.social-icon {
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  width: 25px;
+}
+
+.social-icon:hover {
+  color: #000000; /* Twitter blue or Facebook blue depending on icon */
+}
+
+.social-icon-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  padding: 10px;
+}
+
+/* for unique screen sizing requirements */
+.responsive-message {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .desktop-only-highlight {
+    color: red !important;
+  }
+}
+
+/* Tablet view (between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .responsive-message {
+    display: block;
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+  }
+
+  body {
+    background-color: rgb(21, 26, 54);
+  }
+}
+
+/* Mobile view (below 768px) */
+@media (max-width: 767px) {
+  .responsive-message {
+    display: none;
+  }
+}
+
+/* Medium screens my G */
+@media (max-width: 992px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Smaller screens (phones in landscape) */
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile phones (portrait) */
+@media (max-width: 550px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
+  /* Game Card */
+.game-card {
+    background-color: #1a1a1a;
+    border: 2px solid #39ff14;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #39ff14aa;
+    padding: 16px;
+    width: 22%; /* 👈 this is what allows 4 per row */
+    min-width: 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+  
+  
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-section {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;            
+  overflow: hidden;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-section {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+  padding: 10px;
+  background-color: #333; /* temp background for visibility */
+}
+
+.section-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px; /* Or whatever height works best for your layout */
+    object-fit: cover; /* 🔥 This maintains aspect ratio + crops edges */
+    border-radius: 6px;
+    margin-bottom: 12px;
+}  
+
+#video-container {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 24px;
+}
+  
+  /* Game Title */
+.game-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff4f81;
+    text-shadow: 0 0 8px #ff4f81;
+    margin-bottom: 8px;
+    text-align: center;
+}
+  
+  /* Game Details */
+.game-details {
+    font-size: 1rem;
+    text-align: center;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+  
+  /* Responsive fix for smaller screens */
+@media (max-width: 900px) {
+    .game-card {
+      width: 45%;
+    }
+
+    iframe {
+      width: 550px;
+    }
+}
+  
+@media (max-width: 600px) {
+    .game-card {
+      width: 90%;
+    }
+
+    iframe {
+      width: 500px;
+    }
+}
